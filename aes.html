@@ -3,16 +3,16 @@
     <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
     <script>
       //test AES encryption and decryption
-      var test = {
-        str: 'hello',
-        passpharse: 'password'
-      };
+      console.assert(typeof(CryptoJS) !== 'undefined', 'CryptoJS failed to load');
 
+      var test = {};
+      test.str = 'hello';
+      test.passpharse = 'password';
       test.encrypted = CryptoJS.AES.encrypt(test.str, test.passpharse);
       test.decrypted = CryptoJS.AES.decrypt(test.encrypted, test.passpharse);
       test.resultString = test.decrypted.toString(CryptoJS.enc.Utf8);
 
-      console.assert(test.resultString === test.str, 'Something went wrong with AES!');
+      console.assert(test.resultString === test.str, 'Something went wrong with AES calculation!');
     </script>
   </head>
   <body>
