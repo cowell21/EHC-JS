@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
+    <script>
+      //test AES encryption and decryption
+      var test = {
+        str: 'hello',
+        passpharse: 'password'
+      };
+
+      test.encrypted = CryptoJS.AES.encrypt(test.str, test.passpharse);
+      test.decrypted = CryptoJS.AES.decrypt(test.encrypted, test.passpharse);
+      test.resultString = test.decrypted.toString(CryptoJS.enc.Utf8);
+
+      console.assert(test.resultString === test.str, 'Something went wrong with AES!');
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
