@@ -10,9 +10,9 @@
       test.passpharse = 'password';
       test.encrypted = CryptoJS.AES.encrypt(test.str, test.passpharse);
       test.decrypted = CryptoJS.AES.decrypt(test.encrypted, test.passpharse);
-      test.resultString = test.decrypted.toString(CryptoJS.enc.Utf8);
+      test.decryptedString = test.decrypted.toString(CryptoJS.enc.Utf8);
 
-      console.assert(test.resultString === test.str, 'Something went wrong with AES calculation!');
+      console.assert(test.decryptedString === test.str, 'Something went wrong with AES calculation!');
     </script>
   </head>
   <body>
